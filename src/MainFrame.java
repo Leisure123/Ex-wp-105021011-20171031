@@ -28,6 +28,7 @@ public class MainFrame extends JFrame {
     private JMenuItem miFileCategory = new JMenuItem("Category");
     private JMenuItem miGameLotto = new JMenuItem("Lotto");
     private JMenuItem miGameKey = new JMenuItem("Keyboard");
+    private JMenuItem miGameTictactoe = new JMenuItem("Tic-tac-toe game");
     private JMenuItem miSetFont = new JMenuItem("Font");
     private Random rnd = new Random(System.currentTimeMillis());
     private JDesktopPane jdp = new JDesktopPane();
@@ -69,6 +70,7 @@ public class MainFrame extends JFrame {
     private JPanel panDataTop = new JPanel();
     private JPanel panDataCen = new JPanel();
 
+
     public MainFrame(LoginFrame loginframe){
         login = loginframe;
         initComp();
@@ -90,13 +92,14 @@ public class MainFrame extends JFrame {
         mbr.add(mSet);
         mbr.add(mGame);
         mbr.add(mAbout);
-        // MenuItem
+//      MenuItem
         mFile.add(miFileBook);
         mFile.add(miFileCategory);
         mFile.add(miFileExit);
         mSet.add(miSetFont);
         mGame.add(miGameLotto);
         mGame.add(miGameKey);
+        mGame.add(miGameTictactoe);
 //      interalFrame to Desktop
         jdp.add(inBook);
         jdp.add(infLotto);
@@ -130,6 +133,14 @@ public class MainFrame extends JFrame {
         mBookFeatures.add(miBookLoad);
         mBookFeatures.add(miBookClose);
 
+
+        miGameTictactoe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SeverFrame sFrame = new SeverFrame();
+                sFrame.setVisible(true);
+            }
+        });
 
 //      Book
         miBookLoad.addActionListener(new ActionListener() {
